@@ -9,47 +9,44 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="page-header">
-						<img src="assets/images/hangman.jpg" class="text-center">
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-md-12 header-row">
+					<img src="assets/images/hangman.jpg" class="img-responsive">
+			</div>
 			</div><!-- end of header row div -->
-			
-			<div class="row">
-				<div class="col-md-3">
-					<div class="img-responsive">
-					<img src="">
+				<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="img-responsive">
+						<img src="">
+						</div>
 					</div>
-				</div>
-				<div class="col-md-9">
-					<p>
-						Press any key to get started!
-					</p>
-					<p>
-						Wins:
-					</p>
-					<p>
-						Current Word
-					</p>
-					<p>
-						<span></span>
-					</p>
-					<p>
-						Number of Guesses Remaining
-					</p>
-					<p>
-						<span></span>
-					</p>
-					<p>
-						Letters already guessed
-					</p>
-					<p>
-						<span></span>
-					</p>
-				</div>
+					<div class="col-md-9">
+						<p>
+							Press any key to get started!
+						</p>
+						<p>
+							Wins: <span id="numWin">0</span>
+						</p>
+						<p>
+							Current Word
+						</p>
+						<p>
+							<span id="word"></span>
+						</p>
+						<p>
+							Number of Guesses Remaining
+						</p>
+						<p>
+							<span id="numChances">6</span>
+						</p>
+						<p>
+							Letters already guessed:
+						</p>
+						<p>
+							<span id="alreadyGuessed"></span>
+						</p>
+					</div>
 			</div><!-- end of second row div -->
 
 		</div><!-- end of container div -->

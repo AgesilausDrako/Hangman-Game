@@ -1,0 +1,23 @@
+body {
+	background-color: #ddd;
+}
+
+.container {
+	margin-top: 2em;
+}
+
+.header-row {
+	background-color: #000;
+}
+
+.img-responsive {
+	margin: 0 auto;
+}
+
+p {
+	font-size: 2em;
+}
+
+#word {
+	font-size: 3em;
+}
