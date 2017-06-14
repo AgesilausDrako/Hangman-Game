@@ -35,8 +35,13 @@ document.onkeyup = function (event) {
 	for (var j=0; j<word.length; j++) {
 		if (word[j] === userGuess) {
 			answerArr[j] = userGuess;
-		} 
-	} 
+		}
+	}
+
+	if (word.indexOf(userGuess) ===  -1) {
+		chances-=1;
+	}
+
 
     document.querySelector("#numChances").innerHTML = chances;
     document.querySelector("#word").innerHTML = answerArr.join(" ");
@@ -50,6 +55,8 @@ document.onkeyup = function (event) {
         }
     }
 
+    if (indexOf())
+
    //Reset variables and obtain a new word by recalling the randomWord function
    	if (remainingLetters === 0 || chances < 0) {
    		wins+=1;
@@ -57,17 +64,13 @@ document.onkeyup = function (event) {
    		guessArr=[];
    		answerArr=[];
    		remainingLetters = 0;
-   		randomWord();
    		document.querySelector("#numChances").innerHTML = chances;
-   		document.querySelector("#numWins").innerHTML = wins;
+   		document.querySelector("#numWin").innerHTML = wins;
     	document.querySelector("#alreadyGuessed").innerHTML = "";
+   		randomWord();
    	}
-
 }
-    
-/* if (word.indexOf() = -1) {
-		chances-=1;
-*/
+
 
 
 
