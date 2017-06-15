@@ -13,6 +13,7 @@ var answerArr = [];
 
 //Gamestart function
 function randomWord() {
+
 	//Computer's random guess
 	word = wordBank[Math.floor(Math.random() * wordBank.length)];
 	//Array for guess storage 
@@ -30,18 +31,20 @@ document.onkeyup = function (event) {
 
 	var userGuess = event.key;
 	
-	guessArr.push(userGuess);
-	
-	for (var j=0; j<word.length; j++) {
-		if (word[j] === userGuess) {
-			answerArr[j] = userGuess;
+	if (!guessArr.includes(userGuess)) {
+		
+		guessArr.push(userGuess);
+
+		for (var j=0; j<word.length; j++) {
+			if (word[j] === userGuess) {
+				answerArr[j] = userGuess;
+			}
+		}
+
+		if (word.indexOf(userGuess) === -1) {
+			chances-=1;
 		}
 	}
-
-	if (word.indexOf(userGuess) ===  -1) {
-		chances-=1;
-	}
-
 
     document.querySelector("#numChances").innerHTML = chances;
     document.querySelector("#word").innerHTML = answerArr.join(" ");
@@ -55,12 +58,9 @@ document.onkeyup = function (event) {
         }
     }
 
-    if (indexOf())
-
-   //Reset variables and obtain a new word by recalling the randomWord function
-   	if (remainingLetters === 0 || chances < 0) {
-   		wins+=1;
-   		chances=6;
+    //Reset variables and obtain a new word by recalling the randomWord function
+    function reset () {
+    	chances=6;
    		guessArr=[];
    		answerArr=[];
    		remainingLetters = 0;
@@ -68,6 +68,17 @@ document.onkeyup = function (event) {
    		document.querySelector("#numWin").innerHTML = wins;
     	document.querySelector("#alreadyGuessed").innerHTML = "";
    		randomWord();
+    }
+
+   	//Calls reset when no letters remain and updates wins counter
+   	if (remainingLetters <= 0) {
+   		wins+=1;
+   		reset();
+   	}
+
+   	//Calls reset
+   	if(chances <= 0) {
+   		reset();
    	}
 }
 

@@ -24,3 +24,7 @@ p {
 #word {
 	font-size: 3em;
 }
+
+.loser {
+	color: red;
+}
