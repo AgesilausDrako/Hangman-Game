@@ -6,8 +6,8 @@
 		<title>Hangman Game</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	</head>
 
+	</head>
 	<body>
 		<div class="row">
 			<div class="col-md-12 header-row">
@@ -16,12 +16,12 @@
 			</div><!-- end of header row div -->
 				<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-7">
 						<div id="picture-div" class="img-responsive">
 						<img src="assets/images/Hangman_6.png-c200">
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div id="main-game" class="col-md-5">
 						<p>
 							Press any key to get started!
 						</p>
@@ -46,9 +46,12 @@
 						<p>
 							<span id="alreadyGuessed"></span>
 						</p>
-					</div>
 			</div><!-- end of second row div -->
-
+			<div class="col-md-12 col-md-offset-7">
+                  <button type="reset" id="reset-btn" class="btn btn-primary btn-lg reset">Reset Word</button>
+                  <button type="restart" id="restart-btn" class="btn btn-primary btn-lg restart">Restart</button>
+                </div>
+			</div>
 		</div><!-- end of container div -->
 	<script src="assets/javascript/game.js"></script>
 	</body>
