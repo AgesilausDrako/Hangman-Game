@@ -1,6 +1,16 @@
+//Background Audio Function
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("opening").play();
+});
+
+function gameover (){
+	document.getElementById("gameover").play();
+}
 //Words for the game
 var wordBank = ["javascript", "python", "ruby", 
-				"coffeescript", "java"];
+				"coffeescript", "java", "c++", "c#", 
+				"objective-c", "html", "css", "php",
+				"perl", "pascal"];
 
 //Stores the word chosen
 var word = "";
@@ -11,7 +21,6 @@ var wins = 0;
 var losses = 0;
 var chances = 6;
 var answerArr = [];
-
 
 //Gamestart function
 function randomWord() {
@@ -45,6 +54,15 @@ document.onkeyup = function (event) {
 
 		if (word.indexOf(userGuess) === -1) {
 			chances-=1;
+			function lossSound() {
+				document.getElementById('lossSound').play();
+			}
+			lossSound();
+		} else {
+			function winSound() {
+				document.getElementById('winSound').play();
+			}
+			winSound();
 		}
 	}
 
@@ -72,16 +90,18 @@ document.onkeyup = function (event) {
    		reset();
    	}
 
-   	if (wins === 1) {
+   	if (wins === 5) {
    		var winner = "<h1 class='winner'>Nice! You really know your coding languages!</h1>";
    		document.querySelector("#main-game").innerHTML = winner;
-   		document.querySelector('#picture-div').src="../images/winner.png";
+   		document.querySelector("#game-image").src="winner.png";
+   		gameover();
    	}
 
-   	if (losses === 1) {
+   	if (losses === 3) {
    		var loser = "<h1 class='loser'>Come on, man! You suck!</h1>";
    		document.querySelector("#main-game").innerHTML = loser;
-   		document.querySelector('#picture-div').src="../images/loser.jpg";
+   		document.querySelector("#game-image").src="loser.jpg";
+   		gameover();
    	}
 }
 

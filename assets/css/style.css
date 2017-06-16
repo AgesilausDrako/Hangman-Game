@@ -11,14 +11,21 @@ body {
 }
 
 img {
+	margin: 1.5em 0 1em 2em;
 	width: 80%;
 }
+
 .img-responsive {
 	margin: 0 auto;
 }
 
+.question {
+	color: #1a1a1a;
+	font-size: 3em;
+}
+
 p {
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 #word {
@@ -53,3 +60,4 @@ h1 {
 	background-color: #fff;
 	color: #000;
 }
+

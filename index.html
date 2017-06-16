@@ -11,7 +11,7 @@
 	<body>
 		<div class="row">
 			<div class="col-md-12 header-row">
-					<img src="assets/images/hangman.jpg" class="img-responsive">
+					<img id="game-image" src="assets/images/hangman.jpg" class="img-responsive">
 			</div>
 			</div><!-- end of header row div -->
 				<div class="container">
@@ -22,8 +22,8 @@
 						</div>
 					</div>
 					<div id="main-game" class="col-md-5">
-						<p>
-							Press any key to get started!
+						<p class="question">
+							How well do you know coding languages?
 						</p>
 						<p>
 							Wins: <span id="numWin">0</span>
@@ -52,6 +52,18 @@
                   <button type="restart" id="restart-btn" class="btn btn-primary btn-lg restart">Restart</button>
                 </div>
 			</div>
+			<audio id="opening">
+				<source src="assets/audio/Opening.mp3" type="audio/mp3">
+			</audio>
+			<audio id="winSound">
+				<source src="assets/audio/Ta Da.mp3" type="audio/mp3">
+			</audio>
+			<audio id="lossSound">
+				<source src="assets/audio/Uh Oh Baby.mp3" type="audio/mp3">
+			</audio>
+			<audio id="gameover">
+				<source src="assets/audio/Ending.mp3" type="audio/mp3">
+			</audio>
 		</div><!-- end of container div -->
 	<script src="assets/javascript/game.js"></script>
 	</body>
