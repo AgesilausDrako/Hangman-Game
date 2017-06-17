@@ -1,8 +1,9 @@
-//Background Audio Function
+//Gamestart Audio Function
 document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("opening").play();
 });
 
+//Gameover Music Function
 function gameover (){
 	document.getElementById("gameover").play();
 }
@@ -41,23 +42,24 @@ randomWord();
 document.onkeyup = function (event) {
 
 	var userGuess = event.key;
-	
+	//Prevents using the same guess
 	if (!guessArr.includes(userGuess)) {
-		
+		//Adds new guess to the array
 		guessArr.push(userGuess);
-
+		//Checks for correct guess and updates the answer array
 		for (var j=0; j<word.length; j++) {
 			if (word[j] === userGuess) {
 				answerArr[j] = userGuess;
 			}
 		}
-
+		//Decrements number of chances if guess is wrong and signals wrong sound
 		if (word.indexOf(userGuess) === -1) {
 			chances-=1;
 			function lossSound() {
 				document.getElementById('lossSound').play();
 			}
 			lossSound();
+		//Otherwise a win sound is called rewarding the player
 		} else {
 			function winSound() {
 				document.getElementById('winSound').play();
@@ -65,11 +67,12 @@ document.onkeyup = function (event) {
 			winSound();
 		}
 	}
-
+	//Updates the current word, number of chances left, and displays guesses made
     document.querySelector("#numChances").innerHTML = chances;
     document.querySelector("#word").innerHTML = answerArr.join(" ");
     document.querySelector("#alreadyGuessed").innerHTML = guessArr.join();
-   
+   	
+   	//Checks for remaining letters
    	var remainingLetters = answerArr.length;
 
     for (k = 0; k < answerArr.length; k++) {
@@ -84,12 +87,13 @@ document.onkeyup = function (event) {
    		reset();
    	}
 
-   	//Calls reset
+   	//Registers loss and calls reset when chances expire
    	if(chances <= 0) {
    		losses+=1;
    		reset();
    	}
 
+   	//Upon 5 wins updates html with winner message and signals gameover music
    	if (wins === 5) {
    		var winner = "<h1 class='winner'>Nice! You really know your coding languages!</h1>";
    		document.querySelector("#main-game").innerHTML = winner;
@@ -97,6 +101,7 @@ document.onkeyup = function (event) {
    		gameover();
    	}
 
+   	//Upon 3 losses updates html with loser message and signals gameover music
    	if (losses === 3) {
    		var loser = "<h1 class='loser'>Come on, man! You suck!</h1>";
    		document.querySelector("#main-game").innerHTML = loser;
@@ -105,7 +110,7 @@ document.onkeyup = function (event) {
    	}
 }
 
-//Reset variables and obtain a new word by recalling the randomWord function
+//Reset variables and obtain new word by recalling the randomWord function
 function reset () {
 	chances=6;
 	guessArr=[];
@@ -117,10 +122,12 @@ function reset () {
 	randomWord();
 }
 
+//Reset word function triggered by reset button
 document.getElementById("reset-btn").addEventListener("click", function(){
     reset();
 });
 
+//Game restart function triggered by restart button
 document.getElementById("restart-btn").addEventListener("click", function(){
 	document.location.reload();
 });

@@ -1,3 +1,5 @@
+/* Main Styles */
+
 body {
 	background-color: #ddd;
 }
@@ -10,6 +12,7 @@ body {
 	background-color: #000;
 }
 
+/* Image */
 img {
 	margin: 1.5em 0 1em 2em;
 	width: 80%;
@@ -24,6 +27,7 @@ img {
 	font-size: 3em;
 }
 
+/* Main Content Styles */
 p {
 	font-size: 2em;
 }
@@ -37,6 +41,7 @@ h1 {
 	font-size: 5em;
 }
 
+/* Game State Styles */
 .winner {
 	color: #33cc33;
 }
@@ -45,12 +50,13 @@ h1 {
 	color: #cc0000;
 }
 
+/* Buttons */
 .btn {
 	padding: 1em;
 	width: 8em;
 }
+
 .reset {
-	
 	background-color: #000;
 	color: #ddd;
 	border-color: #ddd;
