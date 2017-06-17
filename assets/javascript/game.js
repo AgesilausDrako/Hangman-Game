@@ -68,7 +68,7 @@ document.onkeyup = function (event) {
 		}
 	}
 	//Updates the current word, number of chances left, and displays guesses made
-    //document.querySelector("#numChances").innerHTML = chances;
+    document.querySelector("#numChances").innerHTML = chances;
     document.querySelector("#word").innerHTML = answerArr.join(" ");
     document.querySelector("#alreadyGuessed").innerHTML = guessArr.join();
    	
