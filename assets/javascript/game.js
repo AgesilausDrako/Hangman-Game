@@ -68,7 +68,7 @@ document.onkeyup = function (event) {
 		}
 	}
 	//Updates the current word, number of chances left, and displays guesses made
-    document.querySelector("#numChances").innerHTML = chances;
+    //document.querySelector("#numChances").innerHTML = chances;
     document.querySelector("#word").innerHTML = answerArr.join(" ");
     document.querySelector("#alreadyGuessed").innerHTML = guessArr.join();
    	
@@ -97,7 +97,7 @@ document.onkeyup = function (event) {
    	if (wins === 5) {
    		var winner = "<h1 class='winner'>Nice! You really know your coding languages!</h1>";
    		document.querySelector("#main-game").innerHTML = winner;
-   		document.querySelector("#game-image").src="winner.png";
+   		document.querySelector("#picture").setAttribute("src", "assets/images/winner.png");
    		gameover();
    	}
 
@@ -105,7 +105,7 @@ document.onkeyup = function (event) {
    	if (losses === 3) {
    		var loser = "<h1 class='loser'>Come on, man! You suck!</h1>";
    		document.querySelector("#main-game").innerHTML = loser;
-   		document.querySelector("#game-image").src="loser.jpg";
+   		document.querySelector("#picture").setAttribute("src", "assets/images/loser.jpg");
    		gameover();
    	}
 }
